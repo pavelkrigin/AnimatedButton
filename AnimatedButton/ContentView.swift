@@ -25,8 +25,19 @@ struct ContentView: View {
 extension ContentView {
     private func backgroundView() -> some View {
         Rectangle()
-            .fill(.linearGradient(colors: [.black.opacity(0.9), .black, .black.opacity(0.9)], startPoint: .topLeading, endPoint: .bottomTrailing))
+            .fill(.linearGradient(colors: [.black.opacity(0.9),
+                .black,
+                .black.opacity(0.9)],
+                                  startPoint: .topLeading, endPoint: .bottomTrailing))
             .edgesIgnoringSafeArea(.all)
+    }
+    
+    private func anmatedButton() -> some View {
+        ZStack {
+            Rectangle()
+                
+        }
+        
     }
 }
     
