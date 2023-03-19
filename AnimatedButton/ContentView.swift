@@ -35,7 +35,7 @@ extension ContentView {
     private func anmatedButton() -> some View {
         ZStack {
             Rectangle()
-                
+                .fill(.linearGradient(colors: [.purple, .pink], startPoint: .top, endPoint: .bottom))
         }
         
     }
