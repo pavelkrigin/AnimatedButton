@@ -36,6 +36,27 @@ extension ContentView {
         ZStack {
             Rectangle()
                 .fill(.linearGradient(colors: [.purple, .pink], startPoint: .top, endPoint: .bottom))
+                .mask {
+                    Canvas{context, size
+                        context.addFilter(
+                            .alphaThreshold(min: 0.8, color: .black))
+                        context.addFilter(.blur(radius: 8))
+                        context.drawLayer {
+                            ctx in for index in [1,2,3] {
+                                if let resolvedView =
+                                    context.resolveSymbol(id: index) {
+                                    ctx.draw(resolvedView, at:
+                                                CGPoint(x:
+                                                            size.width/2, y:
+                                                            size.height/2))
+                                }
+                            }
+                        }
+                        
+                    } symbols: {
+                        
+                    }
+                }
         }
         
     }
